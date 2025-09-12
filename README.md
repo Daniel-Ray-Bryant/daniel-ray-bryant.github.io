@@ -15,5 +15,5 @@ Simple and clear ways for collaborators, players, and industry professionals to 
 **Responsive Design**: 
 Fully responsive layout that looks great on all devices, from mobile phones to desktop computers.
 
-**License**
+**License**:
 This project is licensed under the MIT License.
