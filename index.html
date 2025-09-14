@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Bryant - Kloud Pixel Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a42b085750.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0c1d;
+        }
+
+        /* Custom scroll-driven animation for the cards */
+        .card-container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 24vh;
+        }
+        
+        .card {
+            position: sticky;
+            top: 25vh;
+            width: 90%;
+            max-width: 600px;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s cubic-bezier(0.2, 0, 0, 1);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-1 { z-index: 10; }
+        .card-2 { z-index: 20; }
+        .card-3 { z-index: 30; }
+
+        .card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero-bg {
+            background-image: url('images/placeholder1.avif'),
+                              url('images/placeholder2.avif'),
+                              url('images/placeholder3.avif'),
+                              url('images/placeholder4.avif'),
+                              url('images/placeholder5.avif'),
+                              url('images/placeholder6.avif'),
+                              url('images/placeholder7.avif'),
+                              url('images/placeholder8.avif'),
+                              url('images/placeholder9.avif');
+            background-size: 33.33% 33.33%;
+            background-repeat: no-repeat;
+            background-position: top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right;
+            filter: brightness(0.5);
+            opacity: 0.8;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .card-glow {
+            border-radius: 1.5rem;
+            box-shadow: 0 0 15px theme('colors.pink.500'), 0 0 25px theme('colors.blue.500'), inset 0 0 15px theme('colors.pink.500'), inset 0 0 25px theme('colors.blue.500');
+        }
+
+        .contact-input {
+            background-color: transparent;
+            border: 2px solid theme('colors.pink.500');
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-input:focus {
+            outline: none;
+            border-color: theme('colors.blue.500');
+            box-shadow: 0 0 8px theme('colors.blue.500');
+        }
+
+        .expertise-card-image-container {
+            flex-shrink: 0;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        
+        .expertise-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (min-width: 768px) {
+            .expertise-grid-item {
+                display: flex;
+            }
+
+            .expertise-card-image-container {
+                width: 250px;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#0d0c1d] text-white">
+
+    <!-- Hero Section -->
+    <div id="home" class="relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
+        <div class="hero-bg"></div>
+        <div class="relative z-10 text-center flex flex-col items-center">
+            <!-- Headshot -->
+            <img src="images/me.jpg" alt="Daniel Bryant Headshot" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover mb-6 border-4 border-pink-500 shadow-lg">
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-white">Daniel Bryant</h1>
+            <p class="max-w-xl text-md sm:text-lg mb-8 text-gray-200">
+                I'm the Founder of Kloud Pixel Studios, where I develop original video games from world building and scripting to cinematic's, UI, narrative design, and much more. With experience in programming, graphic design, and writing, I blend technical skill with creative vision to deliver polished, immersive projects. My focus is on building interactive experiences that engage players and tell stories that last!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#projects" class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Projects</a>
+                <a href="#contact-form-section" class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Connect</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kloud Pixel Studios Banner -->
+    <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md py-12 text-center rounded-2xl mx-4 sm:mx-8 -mt-24 relative z-20">
+        <!-- Kloud Pixel Studios Logo -->
+        <img src="images/KPlogo.png" alt="Kloud Pixel Studios Logo" class="mx-auto h-24 mb-4 object-contain">
+        <h2 class="text-xl sm:text-3xl font-bold text-white">Founder of Kloud Pixel Studios</h2>
+    </div>
+
+    <!-- Cards Section -->
+    <div id="projects" class="py-16 sm:py-24 card-container">
+        <!-- Card 1 -->
+        <div id="card-1" class="card card-1 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
+            <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Unreal Engine 5 Projects</h3>
+            <p class="text-sm sm:text-lg mb-8 text-gray-300">
+                Discover the worlds I've meticulously crafted in Unreal Engine 5. These projects highlight my unique blend of technical expertise and creative vision, from C++ and Blueprint scripting to polished visuals.
+            </p>
+            <a href="https://kloudpixel.itch.io" target="_blank" class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View</a>
+        </div>
+        <!-- Card 2 -->
+        <div id="card-2" class="card card-2 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
+            <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">C++ Projects</h3>
+            <p class="text-sm sm:text-lg mb-8 text-gray-300">
+                A collection of my C++ projects, designed to deliver snappy, fun, and highly polished gameplay. My focus is on crafting unique mechanics and stable systems that make for memorable player experiences.
+            </p>
+            <a href="https://kloudpixel.itch.io" target="_blank" class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View</a>
+        </div>
+        <!-- Card 3 -->
+        <div id="card-3" class="card card-3 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
+            <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Web & Mobile Games</h3>
+            <p class="text-sm sm:text-lg mb-8 text-gray-300">
+                Browse all the interactive browser games I've created using HTML, CSS, and JavaScript. Accessible on desktop and mobile devices.
+            </p>
+            <a href="https://kloudpixel.itch.io" target="_blank" class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Play</a>
+        </div>
+    </div>
+
+    <!-- Expertise Grid Section -->
+    <div class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-center text-3xl sm:text-5xl font-bold mb-12 text-white">Showcasing my digital expertise.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card 1: Game Development -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
+                <div class="expertise-card-image-container">
+                    <img src="images/GameDev.png" alt="Game Development" class="expertise-card-image">
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">Game Development</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Game Development</h3>
+                    <p class="text-gray-300 text-sm">
+                        Proficient with Unreal Engine and C++. My most significant past projects include working on first-person shooters, role-playing games, platformers, survival games, action adventure titles, and many others!
+                    </p>
+                </div>
+            </div>
+            <!-- Card 2: Web and App Coding -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
+                <div class="expertise-card-image-container">
+                    <img src="images/browsergame.png" alt="Web and App Coding" class="expertise-card-image">
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">Web and App Coding</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Web and App Coding</h3>
+                    <p class="text-gray-300 text-sm">
+                        Building responsive web applications and browser games with HTML, CSS, and JavaScript. Prioritizing clean code, modularity, and performance.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 3: Graphic Design -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
+                <div class="expertise-card-image-container">
+                    <img src="images/GraphicDesign.png" alt="Graphic Design" class="expertise-card-image">
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">Graphic Design</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Graphic Design</h3>
+                    <p class="text-gray-300 text-sm">
+                        Designing UI assets, branding, and visuals for games, software, and marketing campaigns. Skilled in digital illustration, layout, and creating cohesive visual identities.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 4: My Certificates -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col justify-start card-glow">
+                <div class="flex flex-col">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">My Certificates</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">My Certificates:</h3>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <p><strong>Currently Pursuing:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>B.S. in Game Programming & Development<br>Southern New Hampshire University [2028]</li>
+                        </ul>
+                        <p><strong>OpenEDG C++ Institute:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><a href="https://www.linkedin.com/learning/certificates/e45e49a69da7d26b59bfc5a72d9176f5ddf1c61eca53544ba252c64e8a076494" target="_blank" class="hover:underline text-blue-400">C++ Programming Professional Certificate</a></li>
+                        </ul>
+                        <p><strong>LinkedIn Learning Certificates:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><a href="https://www.linkedin.com/learning/certificates/be23cdedd4ccdcd727a11f7dbdced175303ebc05120147af5024fc863b7b2f88" target="_blank" class="hover:underline text-blue-400">C++ Essential Training</a></li>
+                            <li><a href="https://www.linkedin.com/learning/certificates/2307be8256ae92001e863829524e07f78f53b52fe9675e2f32e03305b9d03cff" target="_blank" class="hover:underline text-blue-400">C++ Design Patterns: Structural</a></li>
+                            <li><a href="https://www.linkedin.com/learning/certificates/ff4d9ef8de09320cad899cac3ac10f3888e7fd437f846fe1cbf9ebc57aed6b9b" target="_blank" class="hover:underline text-blue-400">C++ Development: Advanced Concepts, Lambda Expressions, and Best Practices</a></li>
+                            <li><a href="https://www.linkedin.com/learning/certificates/870709082ba95806b377933019b480f5209d31f88e6fdb5" target="_blank" class="hover:underline text-blue-400">AI Pair Programming with GitHub Copilot</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Banner Section -->
+    <div class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 rounded-2xl card-glow overflow-hidden">
+            <div class="absolute inset-0 z-0 bg-[url('images/letsbuildyournextproject_banner.avif')] bg-cover bg-center opacity-30"></div>
+            <div class="relative z-10 text-left flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                <div class="mb-6 sm:mb-0">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 text-white">Let's build your<br>next project together</h2>
+                    <p class="max-w-xl text-md sm:text-lg text-gray-300">
+                        Ready to collaborate on innovative games, software, or design projects? Reach out to discuss your ideas, request a portfolio, or explore partnership opportunities. Let’s connect and create something exceptional.
+                    </p>
+                </div>
+                <a href="#contact-form-section" class="w-full sm:w-auto mt-4 sm:mt-0 bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div id="contact-form-section" class="py-16 sm:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 rounded-2xl card-glow">
+            <!-- Contact Header Section -->
+            <div class="mb-8">
+                <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Contact</p>
+                <h2 class="text-4xl font-extrabold mb-4 text-white">Let's build<br>something together</h2>
+                <p class="text-gray-300 text-sm">Questions or collaboration? Reach out using the form or contact details below for project inquiries, job opportunities, or partnerships.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Form & Details Container -->
+                <div class="flex-1 flex flex-col gap-8">
+                    <!-- Form -->
+                    <form id="contact-form" action="mailto:officialkloudpixel@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="first-name" class="text-xs text-gray-400 uppercase tracking-widest">First Name</label>
+                                <input type="text" id="first-name" name="first-name" placeholder="First Name" class="w-full contact-input mt-1">
+                            </div>
+                            <div>
+                                <label for="last-name" class="text-xs text-gray-400 uppercase tracking-widest">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" placeholder="Last Name" class="w-full contact-input mt-1">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="text-xs text-gray-400 uppercase tracking-widest">Email</label>
+                            <input type="email" id="email" name="email" placeholder="email@website.com" class="w-full contact-input mt-1">
+                        </div>
+                        <div>
+                            <label for="subject" class="text-xs text-gray-400 uppercase tracking-widest">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's the subject of your inquiry?" class="w-full contact-input mt-1">
+                            </div>
+                        <div>
+                            <label for="message" class="text-xs text-gray-400 uppercase tracking-widest">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Type your message." class="w-full contact-input mt-1"></textarea>
+                        </div>
+                        <div class="text-left mt-6">
+                            <button type="submit" class="w-auto bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-8 rounded-full shadow-lg">
+                                Send message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Details and Buttons -->
+                <div class="flex-1 flex flex-col justify-start">
+                    <div class="space-y-6 mb-8 text-gray-300 text-sm">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-phone-alt text-lg text-blue-400"></i>
+                            <div>
+                                <p class="font-bold">Phone</p>
+                                <a href="tel:13146695146" class="hover:text-white transition-colors">1(314)669-5146</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-map-marker-alt text-lg text-blue-400"></i>
+                            <div>
+                                <p class="font-bold">Location</p>
+                                <a href="https://www.google.com/maps/place/St.+Louis,+MO+63101" target="_blank" class="hover:text-white transition-colors">St. Louis, MO 63101</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-envelope text-lg text-blue-400"></i>
+                            <div>
+                                <p class="font-bold">Email</p>
+                                <a href="mailto:officialkloudpixel@gmail.com" class="hover:text-white transition-colors">officialkloudpixel@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <a href="tel:13146695146" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
+                            Call
+                        </a>
+                        <a href="https://www.google.com/maps/place/St.+Louis,+MO+63101" target="_blank" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
+                            Maps
+                        </a>
+                        <a href="mailto:officialkloudpixel@gmail.com" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500">
+        <!-- Kloud Pixel Studios Logo -->
+        <img src="images/KPlogo.png" alt="Kloud Pixel Studios Logo" class="mx-auto h-16 mb-2 opacity-50 object-contain">
+        <p class="text-xs">&copy; 2025 | Kloud Pixel Studios | All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    
+                    const firstName = document.getElementById('first-name').value;
+                    const lastName = document.getElementById('last-name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+
+                    const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`;
+                    const mailtoLink = `mailto:officialkloudpixel@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    
+                    window.location.href = mailtoLink;
+                });
+            }
+
+            // Card Scroll Animation
+            const cards = document.querySelectorAll('.card');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -25% 0px',
+                threshold: [0, 0.25, 0.5, 0.75, 1.0]
+            };
+
+            const cardObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                cardObserver.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
