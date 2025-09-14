@@ -1,51 +1,34 @@
 Daniel Bryant | Kloud Pixel Studios Portfolio
-
 This repository hosts the official portfolio website for Daniel Bryant, founder of Kloud Pixel Studios. The site is a showcase of my skills in game development, web and app coding, and graphic design, built to provide a polished and immersive user experience.
 
+The website uses a dynamic single-page application model. Navigation links show and hide different sections of the page, eliminating the need for separate HTML files.
 
 Sections
 The website is divided into the following key sections:
 
+Home
+The main landing page features a hero section with a professional headshot, name, and a brief biography. When visible, it also includes the "Showcasing my digital expertise" section.
 
-1. Hero Section
-The main landing page features a hero image collage with a professional headshot, name, and a brief biography. It serves as an introduction to my professional background and creative vision.
+About
+The "About" page provides a more detailed biography and personal statement, along with a headshot, offering insight into my background and passion for development.
 
+Projects
+This section acts as a central hub, linking to four detailed project pages. Each of these pages is dedicated to a specific area of my expertise:
 
-2. Projects
-This section highlights my work with a dynamic, scrolling card design. Each card represents a key area of my development expertise:
+Unreal Engine Projects: Showcasing game builds using Unreal Engine.
 
-Unreal Engine 5 Projects: Showcasing next-generation 3D game builds.
+C++ Projects: A collection of projects focused on crafting unique game mechanics and systems.
 
-C++ Projects: A collection of projects focused on crafting unique game mechanics and stable systems.
+Web & Mobile Games: A gallery of interactive browser games created with web technologies.
 
-Web & Mobile Games: A gallery of interactive browser games created with HTML, CSS, and JavaScript.
+Graphic Design: A showcase of my visual design work, including UI/UX mock-ups and promotional graphics.
 
-
-3. Expertise
-A detailed overview of my digital skills and qualifications, laid out in a responsive grid of four cards:
-
-Game Development: My proficiency with Unreal Engine and C++.
-
-Web and App Coding: My experience building responsive web applications.
-
-Graphic Design: My work designing UI assets, branding, and visuals.
-
-My Certificates: A list of my academic pursuits and professional certifications.
-
-
-4. Let's Build Something Together
-A dedicated call-to-action banner encouraging collaboration. This section is designed to be a direct and engaging way for potential partners or clients to get in touch.
-
-
-5. Contact
-A clean, functional contact form for inquiries, job opportunities, or partnerships. It provides multiple ways to connect, including a mailto form submission, phone, and email.
-
-Deployment
-This website is hosted on GitHub Pages directly from this repository's main branch.
+Contact
+This page contains a functional form for professional inquiries, job opportunities, or collaborations. It also includes my phone number, location, and email for easy access. The "Let's build your next project together" banner is visible on every page, providing a consistent call-to-action.
 
 Technologies Used
 HTML5: For the core structure of the website.
 
 Tailwind CSS: For all styling, ensuring a fully responsive and mobile-first design.
 
-JavaScript: For interactivity, including the scrolling card animation.
+JavaScript: For all interactivity, including the dynamic page navigation and the card animations on the Projects hub.
