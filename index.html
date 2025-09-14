@@ -117,238 +117,463 @@
 </head>
 <body class="bg-[#0d0c1d] text-white">
 
-    <!-- Hero Section -->
-    <div id="home" class="relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
-        <div class="hero-bg"></div>
-        <div class="relative z-10 text-center flex flex-col items-center">
-            <!-- Headshot -->
-            <img src="images/me.jpg" alt="Daniel Bryant Headshot" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover mb-6 border-4 border-pink-500 shadow-lg">
-            <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-white">Daniel Bryant</h1>
-            <p class="max-w-xl text-md sm:text-lg mb-8 text-gray-200">
-                I'm the Founder of Kloud Pixel Studios, where I develop original video games from world building and scripting to cinematic's, UI, narrative design, and much more. With experience in programming, graphic design, and writing, I blend technical skill with creative vision to deliver polished, immersive projects. My focus is on building interactive experiences that engage players and tell stories that last!
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#projects" class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Projects</a>
-                <a href="#contact-form-section" class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Connect</a>
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#0d0c1d]/80 backdrop-blur-md shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <button onclick="showSection('home-section')" class="text-2xl font-bold text-pink-500">Home</button>
+            <div class="flex items-center space-x-4 sm:space-x-6">
+                <button onclick="showSection('projects-section')" class="text-gray-300 hover:text-white transition duration-200 px-3 py-2 rounded-md font-medium">Projects</button>
+                <button onclick="showSection('about-section')" class="text-gray-300 hover:text-white transition duration-200 px-3 py-2 rounded-md font-medium">About</button>
+                <button onclick="showSection('contact-form-section')" class="text-gray-300 hover:text-white transition duration-200 px-3 py-2 rounded-md font-medium">Contact</button>
+                <a href="resume.pdf" download class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+                    Download Resume
+                </a>
             </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <!-- Kloud Pixel Studios Banner -->
-    <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md py-12 text-center rounded-2xl mx-4 sm:mx-8 -mt-24 relative z-20">
-        <!-- Kloud Pixel Studios Logo -->
-        <img src="images/KPlogo.png" alt="Kloud Pixel Studios Logo" class="mx-auto h-24 mb-4 object-contain">
-        <h2 class="text-xl sm:text-3xl font-bold text-white">Founder of Kloud Pixel Studios</h2>
-    </div>
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-    <!-- Cards Section -->
-    <div id="projects" class="py-16 sm:py-24 card-container">
-        <!-- Card 1 -->
-        <div id="card-1" class="card card-1 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
-            <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Unreal Engine 5 Projects</h3>
-            <p class="text-sm sm:text-lg mb-8 text-gray-300">
-                Discover the worlds I've meticulously crafted in Unreal Engine 5. These projects highlight my unique blend of technical expertise and creative vision, from C++ and Blueprint scripting to polished visuals.
-            </p>
-            <a href="https://kloudpixel.itch.io" target="_blank" class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View</a>
-        </div>
-        <!-- Card 2 -->
-        <div id="card-2" class="card card-2 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
-            <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">C++ Projects</h3>
-            <p class="text-sm sm:text-lg mb-8 text-gray-300">
-                A collection of my C++ projects, designed to deliver snappy, fun, and highly polished gameplay. My focus is on crafting unique mechanics and stable systems that make for memorable player experiences.
-            </p>
-            <a href="https://kloudpixel.itch.io" target="_blank" class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View</a>
-        </div>
-        <!-- Card 3 -->
-        <div id="card-3" class="card card-3 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
-            <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Web & Mobile Games</h3>
-            <p class="text-sm sm:text-lg mb-8 text-gray-300">
-                Browse all the interactive browser games I've created using HTML, CSS, and JavaScript. Accessible on desktop and mobile devices.
-            </p>
-            <a href="https://kloudpixel.itch.io" target="_blank" class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Play</a>
-        </div>
-    </div>
+        <!-- All content sections are here, hidden by default -->
 
-    <!-- Expertise Grid Section -->
-    <div class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-center text-3xl sm:text-5xl font-bold mb-12 text-white">Showcasing my digital expertise.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Card 1: Game Development -->
-            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
-                <div class="expertise-card-image-container">
-                    <img src="images/GameDev.png" alt="Game Development" class="expertise-card-image">
+        <!-- Home/Hero Section (visible by default) -->
+        <section id="home-section" class="portfolio-page relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
+            <div class="hero-bg"></div>
+            <div class="relative z-10 text-center flex flex-col items-center">
+                <!-- Headshot -->
+                <img src="images/me.jpg" alt="Daniel Bryant Headshot" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover mb-6 border-4 border-pink-500 shadow-lg">
+                <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-white">Daniel Bryant</h1>
+                <p class="max-w-xl text-md sm:text-lg mb-8 text-gray-200">
+                    I'm the Founder of Kloud Pixel Studios, where I develop original video games from world building and scripting to cinematic's, UI, narrative design, and much more. With experience in programming, graphic design, and writing, I blend technical skill with creative vision to deliver polished, immersive projects. My focus is on building interactive experiences that engage players and tell stories that last!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="showSection('projects-section')" class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Projects</button>
+                    <button onclick="showSection('contact-form-section')" class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Connect</button>
                 </div>
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">Game Development</p>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Game Development</h3>
-                    <p class="text-gray-300 text-sm">
-                        Proficient with Unreal Engine and C++. My most significant past projects include working on first-person shooters, role-playing games, platformers, survival games, action adventure titles, and many others!
+            </div>
+        </section>
+
+        <!-- About Me Section (added and hidden by default) -->
+        <section id="about-section" class="portfolio-page min-h-screen py-16 hidden">
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-white">About Daniel Bryant</h1>
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-8 card-glow">
+                <div class="flex-1">
+                    <p class="text-md sm:text-lg mb-8 text-gray-200 leading-relaxed">
+                        Hello! I'm Daniel Bryant, the founder of Kloud Pixel Studios, where I develop original video games from world building and scripting to cinematics, UI, narrative design, and much more. With experience in programming, graphic design, and writing, I blend technical skill with creative vision to deliver polished, immersive projects. My focus is on building interactive experiences that engage players and tell stories that last!
+                    </p>
+                    <p class="text-md sm:text-lg mb-8 text-gray-200 leading-relaxed">
+                        I believe that a great game is a blend of technical excellence and creative vision. I am constantly learning new technologies and pushing the boundaries of what I can create. Feel free to explore my projects to see my work firsthand, and don't hesitate to reach out if you'd like to connect!
                     </p>
                 </div>
+                <img src="images/me.jpg" alt="Daniel Bryant Headshot" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-pink-500 shadow-lg flex-shrink-0">
             </div>
-            <!-- Card 2: Web and App Coding -->
-            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
-                <div class="expertise-card-image-container">
-                    <img src="images/browsergame.png" alt="Web and App Coding" class="expertise-card-image">
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">Web and App Coding</p>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Web and App Coding</h3>
-                    <p class="text-gray-300 text-sm">
-                        Building responsive web applications and browser games with HTML, CSS, and JavaScript. Prioritizing clean code, modularity, and performance.
-                    </p>
-                </div>
-            </div>
-            <!-- Card 3: Graphic Design -->
-            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
-                <div class="expertise-card-image-container">
-                    <img src="images/GraphicDesign.png" alt="Graphic Design" class="expertise-card-image">
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">Graphic Design</p>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Graphic Design</h3>
-                    <p class="text-gray-300 text-sm">
-                        Designing UI assets, branding, and visuals for games, software, and marketing campaigns. Skilled in digital illustration, layout, and creating cohesive visual identities.
-                    </p>
-                </div>
-            </div>
-            <!-- Card 4: My Certificates -->
-            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col justify-start card-glow">
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">My Certificates</p>
-                    <h3 class="text-2xl font-bold mb-4 text-white">My Certificates:</h3>
-                    <div class="text-gray-300 text-sm space-y-2">
-                        <p><strong>Currently Pursuing:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>B.S. in Game Programming & Development<br>Southern New Hampshire University [2028]</li>
-                        </ul>
-                        <p><strong>OpenEDG C++ Institute:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li><a href="https://www.linkedin.com/learning/certificates/e45e49a69da7d26b59bfc5a72d9176f5ddf1c61eca53544ba252c64e8a076494" target="_blank" class="hover:underline text-blue-400">C++ Programming Professional Certificate</a></li>
-                        </ul>
-                        <p><strong>LinkedIn Learning Certificates:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li><a href="https://www.linkedin.com/learning/certificates/be23cdedd4ccdcd727a11f7dbdced175303ebc05120147af5024fc863b7b2f88" target="_blank" class="hover:underline text-blue-400">C++ Essential Training</a></li>
-                            <li><a href="https://www.linkedin.com/learning/certificates/2307be8256ae92001e863829524e07f78f53b52fe9675e2f32e03305b9d03cff" target="_blank" class="hover:underline text-blue-400">C++ Design Patterns: Structural</a></li>
-                            <li><a href="https://www.linkedin.com/learning/certificates/ff4d9ef8de09320cad899cac3ac10f3888e7fd437f846fe1cbf9ebc57aed6b9b" target="_blank" class="hover:underline text-blue-400">C++ Development: Advanced Concepts, Lambda Expressions, and Best Practices</a></li>
-                            <li><a href="https://www.linkedin.com/learning/certificates/870709082ba95806b377933019b480f5209d31f88e6fdb5" target="_blank" class="hover:underline text-blue-400">AI Pair Programming with GitHub Copilot</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Contact Banner Section -->
-    <div class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 rounded-2xl card-glow overflow-hidden">
-            <div class="absolute inset-0 z-0 bg-[url('images/letsbuildyournextproject_banner.avif')] bg-cover bg-center opacity-30"></div>
-            <div class="relative z-10 text-left flex flex-col sm:flex-row items-start sm:items-center justify-between">
-                <div class="mb-6 sm:mb-0">
-                    <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 text-white">Let's build your<br>next project together</h2>
-                    <p class="max-w-xl text-md sm:text-lg text-gray-300">
-                        Ready to collaborate on innovative games, software, or design projects? Reach out to discuss your ideas, request a portfolio, or explore partnership opportunities. Let’s connect and create something exceptional.
-                    </p>
-                </div>
-                <a href="#contact-form-section" class="w-full sm:w-auto mt-4 sm:mt-0 bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Get in Touch</a>
-            </div>
+        <!-- Kloud Pixel Studios Banner -->
+        <div id="kloud-pixel-banner" class="bg-gray-900 bg-opacity-50 backdrop-blur-md py-12 text-center rounded-2xl mx-4 sm:mx-8 -mt-24 relative z-20">
+            <!-- Kloud Pixel Studios Logo -->
+            <img src="images/KPlogo.png" alt="Kloud Pixel Studios Logo" class="mx-auto h-24 mb-4 object-contain">
+            <h2 class="text-xl sm:text-3xl font-bold text-white">Founder of Kloud Pixel Studios</h2>
         </div>
-    </div>
 
-    <!-- Contact Form Section -->
-    <div id="contact-form-section" class="py-16 sm:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 rounded-2xl card-glow">
-            <!-- Contact Header Section -->
-            <div class="mb-8">
-                <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Contact</p>
-                <h2 class="text-4xl font-extrabold mb-4 text-white">Let's build<br>something together</h2>
-                <p class="text-gray-300 text-sm">Questions or collaboration? Reach out using the form or contact details below for project inquiries, job opportunities, or partnerships.</p>
+        <!-- Projects Hub Section -->
+        <section id="projects-section" class="portfolio-page py-16 sm:py-24 card-container hidden">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-4">My Projects</h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    A showcase of my work in game development, programming, and visual design.
+                </p>
+            </div>
+            <!-- Card 1 (Now links to Unreal Projects page) -->
+            <button onclick="showSection('unreal-projects-section')" id="card-1" class="card card-1 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
+                <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Unreal Engine 5 Projects</h3>
+                <p class="text-sm sm:text-lg mb-8 text-gray-300">
+                    Discover the worlds I've meticulously crafted in Unreal Engine 5. These projects highlight my unique blend of technical expertise and creative vision, from C++ and Blueprint scripting to polished visuals.
+                </p>
+                <span class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View Projects</span>
+            </button>
+            <!-- Card 2 (Now links to C++ Projects page) -->
+            <button onclick="showSection('cpp-projects-section')" id="card-2" class="card card-2 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
+                <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">C++ Projects</h3>
+                <p class="text-sm sm:text-lg mb-8 text-gray-300">
+                    A collection of my C++ projects, designed to deliver snappy, fun, and highly polished gameplay. My focus is on crafting unique mechanics and stable systems that make for memorable player experiences.
+                </p>
+                <span class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View Projects</span>
+            </button>
+            <!-- Card 3 (Now links to Web & Mobile Games page) -->
+            <button onclick="showSection('web-mobile-games-section')" id="card-3" class="card card-3 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
+                <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Web & Mobile Games</h3>
+                <p class="text-sm sm:text-lg mb-8 text-gray-300">
+                    Browse all the interactive browser games I've created using HTML, CSS, and JavaScript. Accessible on desktop and mobile devices.
+                </p>
+                <span class="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View Projects</span>
+            </button>
+            <!-- New Card for Graphic Design -->
+            <button onclick="showSection('graphic-design-section')" id="card-4" class="card card-4 bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 text-center text-white card-glow">
+                <h3 class="text-2xl sm:text-4xl font-bold mb-4 text-white">Graphic Design</h3>
+                <p class="text-sm sm:text-lg mb-8 text-gray-300">
+                    A collection of UI/UX, concept art, and visual assets for various projects.
+                </p>
+                <span class="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">View Designs</span>
+            </button>
+        </section>
+
+        <!-- Unreal Projects Page Section (hidden by default) -->
+        <section id="unreal-projects-section" class="portfolio-page py-16 hidden">
+            <h1 class="text-4xl font-extrabold text-white mb-8">Unreal Engine Projects</h1>
+            
+            <!-- Project 1: The Trenches -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl shadow-lg mb-12 card-glow">
+                <h2 class="text-3xl font-bold text-pink-500 mb-4">The Trenches | Unreal Engine 5.6</h2>
+                <!-- Replace with your video embed code (e.g., YouTube or Vimeo iframe) -->
+                <div class="w-full max-w-4xl mx-auto rounded-lg mb-6 h-[450px]">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/9FeEToK0DFw?si=MfokJcoH7wJ3qNRV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <img src="images/trenches_screenshot1.png" alt="Unreal Project Screenshot 1" class="rounded-lg shadow-md border border-gray-600">
+                    <img src="images/trenches_screenshot2.png" alt="Unreal Project Screenshot 2" class="rounded-lg shadow-md border border-gray-600">
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">My Contributions:</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Developed the core gameplay mechanics using only Blueprints.</li>
+                    <li>Designed and implemented the UI/UX for the game menus and player HUD.</li>
+                    <li>Created a modular damage system for the player and enemies.</li>
+                    <li>Engineered a modular weapon and attachment system for easy expansion.</li>
+                    <li>Created a modular biome system to drive environmental audio based on location.</li>
+                    <li>Crafted a unique dialogue system for immersive storytelling.</li>
+                    <li>Engineered a true-first person camera system for a more lifelike view.</li>
+                </ul>
+            </div>
+            <!-- Project 2: Hellfire: Ascension From Evil-->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl shadow-lg mb-12 card-glow">
+                <h2 class="text-3xl font-bold text-pink-500 mb-4">Hellfire: Ascension From Evil | Unreal Engine 5.4</h2>
+                <div class="aspect-video bg-gray-700 rounded-lg mb-6 flex items-center justify-center">
+                    <p class="text-gray-400">Video Coming Soon!</p>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">My Contributions:</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Designed and implemented gameplay mechanics using a combination of Blueprints and C++.</li>
+                    <li>Created the UI/UX for the main menu and in-game HUD.</li>
+                    <li>Crafted a modular sound system for dynamic audio experiences.</li>
+                    <li>Engineered a comprehensive puzzle system with intricate mechanics.</li>
+                    <li>Optimized performance for a smooth gameplay experience on older hardware.</li>
+                    <li>Implemented a robust save/load system for player progress.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- C++ Projects Page Section (hidden by default) -->
+        <section id="cpp-projects-section" class="portfolio-page py-16 hidden">
+            <h1 class="text-4xl font-extrabold text-white mb-8">C++ Projects</h1>
+            
+            <!-- Project 1 Mock-up -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl shadow-lg mb-12 card-glow">
+                <h2 class="text-3xl font-bold text-blue-500 mb-4">Project Title 1: Starwood Hollow</h2>
+                <p class="text-gray-300 mb-6">
+                A small-scale 2D game built from scratch using C++. This is a simple sidescroller where you play as an
+                alien exploring a mysterious planet, fighting off evil skeletons and avoiding dangerous hazards on your way!
+                </p>
+                <h3 class="text-xl font-semibold text-white mb-2">My Contributions:</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Developed a custom sidescroller/platformer controller.</li>
+                    <li>Created a procedural level flow for generating diverse and engaging levels.</li>
+                    <li>Engineered a basic physics simulation for gravity and collision detection.</li>
+                    <li>Implemented enemy AI with simple state machines for patrol and various attack behaviors.</li>
+                    <li>Designed a health and damage system for both the player and enemies.</li>
+                    <li>Added sound effects and background music for an immersive experience.</li>
+                </ul>
             </div>
             
-            <div class="flex flex-col lg:flex-row gap-8">
-                <!-- Form & Details Container -->
-                <div class="flex-1 flex flex-col gap-8">
-                    <!-- Form -->
-                    <form id="contact-form" action="mailto:officialkloudpixel@gmail.com" method="post" enctype="text/plain" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="first-name" class="text-xs text-gray-400 uppercase tracking-widest">First Name</label>
-                                <input type="text" id="first-name" name="first-name" placeholder="First Name" class="w-full contact-input mt-1">
-                            </div>
-                            <div>
-                                <label for="last-name" class="text-xs text-gray-400 uppercase tracking-widest">Last Name</label>
-                                <input type="text" id="last-name" name="last-name" placeholder="Last Name" class="w-full contact-input mt-1">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="text-xs text-gray-400 uppercase tracking-widest">Email</label>
-                            <input type="email" id="email" name="email" placeholder="email@website.com" class="w-full contact-input mt-1">
-                        </div>
-                        <div>
-                            <label for="subject" class="text-xs text-gray-400 uppercase tracking-widest">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="What's the subject of your inquiry?" class="w-full contact-input mt-1">
-                            </div>
-                        <div>
-                            <label for="message" class="text-xs text-gray-400 uppercase tracking-widest">Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Type your message." class="w-full contact-input mt-1"></textarea>
-                        </div>
-                        <div class="text-left mt-6">
-                            <button type="submit" class="w-auto bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-8 rounded-full shadow-lg">
-                                Send message
-                            </button>
-                        </div>
-                    </form>
-                </div>
+            <!-- Project 2 Mock-up (Copy and paste this block for more projects) -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl shadow-lg mb-12 card-glow">
+                <h2 class="text-3xl font-bold text-blue-500 mb-4">Project Title 2: Axe Game</h2>
+                <p class="text-gray-300 mb-6">
+                    A simple C++ game where the player must attempt to cross a line as many times as possible without
+                    being hit by the axe, where each pass of the line increases the speed at which the axe moves.
+                </p>
+                <h3 class="text-xl font-semibold text-white mb-2">My Contributions:</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Created a point system along with high-score tracking between sessions.</li>
+                    <li>Implemented a simple AI for the axe's movement pattern.</li>
+                    <li>Developed a simple player control system for responsive control.</li>
+                    <li>Designed a basic collision detection system to determine hits and misses.</li>
+                    <li>Added sound effects for player actions and game events.</li>
+                </ul>
+            </div>
+        </section>
 
-                <!-- Contact Details and Buttons -->
-                <div class="flex-1 flex flex-col justify-start">
-                    <div class="space-y-6 mb-8 text-gray-300 text-sm">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-phone-alt text-lg text-blue-400"></i>
-                            <div>
-                                <p class="font-bold">Phone</p>
-                                <a href="tel:13146695146" class="hover:text-white transition-colors">1(314)669-5146</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-map-marker-alt text-lg text-blue-400"></i>
-                            <div>
-                                <p class="font-bold">Location</p>
-                                <a href="https://www.google.com/maps/place/St.+Louis,+MO+63101" target="_blank" class="hover:text-white transition-colors">St. Louis, MO 63101</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-envelope text-lg text-blue-400"></i>
-                            <div>
-                                <p class="font-bold">Email</p>
-                                <a href="mailto:officialkloudpixel@gmail.com" class="hover:text-white transition-colors">officialkloudpixel@gmail.com</a>
-                            </div>
-                        </div>
+        <!-- Web & Mobile Games Page Section (hidden by default) -->
+        <section id="web-mobile-games-section" class="portfolio-page py-16 hidden">
+            <h1 class="text-4xl font-extrabold text-white mb-8">Web & Mobile Games</h1>
+            
+            <!-- Project 1: Can O' Whoop Azz -->
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl shadow-lg mb-12 card-glow">
+                <h2 class="text-3xl font-bold text-pink-500 mb-4">Project Title 1: Can O' Whoop Azz</h2>
+                <p class="text-gray-300 mb-6">
+                    A fast-paced, procedural, browser-based, stickman RPG full of humor and action. Crafted with HTML, CSS, and JavaScript.
+                    This title leveraged Microsoft's Copilot AI, starting out as a research project to explore AI-assisted coding.
+                </p>
+                <iframe frameborder="0" src="https://itch.io/embed-upload/14709466?color=333333" allowfullscreen="0aaa" width="960" height="540"><a href="https://kloudpixel.itch.io/can-o-whoop-azz">Play Can O' Whoop Azz on itch.io</a></iframe>
+                <h3 class="text-xl font-semibold text-white mb-2">My Contributions:</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Implemented all game logic, including character movement and enemy spawning.</li>
+                    <li>Managed asset loading and sprite animation.</li>
+                    <li>Developed a responsive UI that adapts to different screen sizes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Graphic Design Page Section (hidden by default) -->
+        <section id="graphic-design-section" class="portfolio-page py-16 hidden">
+            <h1 class="text-4xl font-extrabold text-white mb-8">Graphic Design</h1>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl">A selection of my visual design work, including product mock-ups, cover art, and more.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Graphic Design Item 1 -->
+                <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-6 rounded-2xl shadow-lg card-glow">
+                    <img src="images/artbook.png" alt="Artbook Cover Design Showcase" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-white mb-2">Digital Artbook Cover</h3>
+                    <p class="text-gray-300">A visually stunning cover design for the digital artbook of my game, The Trenches.
+                                            Showcasing a sleek gold-foiled artistic style contrasted by a matte black background.
+                    </p>
+                </div>
+                <!-- Graphic Design Item 2 -->
+                <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-6 rounded-2xl shadow-lg card-glow">
+                    <img src="images/coverart.png" alt="Cover Art Showcase" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-white mb-2">Cover Art For My Zombie FPS Named The Trenches</h3>
+                    <p class="text-gray-300">The cover features carefully engineered visuals that capture the game's same intense atmosphere. Featuring the Reye's brothers helping one another away from danger.</p>
+                </div>
+                <!-- Graphic Design Item 3 -->
+                <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-6 rounded-2xl shadow-lg card-glow">
+                    <img src="images/merchmockups.png" alt="Product Mock-up's Showcase" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-white mb-2">Product Mock-ups For The Trenches</h3>
+                    <p class="text-gray-300">Mock-ups for various merchandise items, including t-shirts, art books, collectible figures, desktop wallpapers, and gift cards all themed around my game, The Trenches.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Grid Section -->
+        <div id="expertise-section" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-3xl sm:text-5xl font-bold mb-12 text-white">Showcasing my digital expertise.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Game Development -->
+                <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
+                    <div class="expertise-card-image-container">
+                        <img src="images/GameDev.png" alt="Game Development" class="expertise-card-image">
                     </div>
-                    <div class="space-y-4">
-                        <a href="tel:13146695146" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
-                            Call
-                        </a>
-                        <a href="https://www.google.com/maps/place/St.+Louis,+MO+63101" target="_blank" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
-                            Maps
-                        </a>
-                        <a href="mailto:officialkloudpixel@gmail.com" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
-                            Email
-                        </a>
+                    <div class="flex flex-col">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Game Development</p>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Game Development</h3>
+                        <p class="text-gray-300 text-sm">
+                            Proficient with Unreal Engine and C++. My most significant past projects include working on first-person shooters, role-playing games, platformers, survival games, action adventure titles, and many others!
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 2: Web and App Coding -->
+                <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
+                    <div class="expertise-card-image-container">
+                        <img src="images/browsergame.png" alt="Web and App Coding" class="expertise-card-image">
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Web and App Coding</p>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Web and App Coding</h3>
+                        <p class="text-gray-300 text-sm">
+                            Building responsive web applications and browser games with HTML, CSS, and JavaScript. Prioritizing clean code, modularity, and performance.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3: Graphic Design -->
+                <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 card-glow expertise-grid-item">
+                    <div class="expertise-card-image-container">
+                        <img src="images/GraphicDesign.png" alt="Graphic Design" class="expertise-card-image">
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Graphic Design</p>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Graphic Design</h3>
+                        <p class="text-gray-300 text-sm">
+                            Designing UI assets, branding, and visuals for games, software, and marketing campaigns. Skilled in digital illustration, layout, and creating cohesive visual identities.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 4: My Certificates -->
+                <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 rounded-2xl flex flex-col justify-start card-glow">
+                    <div class="flex flex-col">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">My Certificates</p>
+                        <h3 class="text-2xl font-bold mb-4 text-white">My Certificates:</h3>
+                        <div class="text-gray-300 text-sm space-y-2">
+                            <p><strong>Currently Pursuing:</strong></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>B.S. in Game Programming & Development<br>Southern New Hampshire University [2028]</li>
+                            </ul>
+                            <p><strong>OpenEDG C++ Institute:</strong></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li><a href="https://www.linkedin.com/learning/certificates/e45e49a69da7d26b59bfc5a72d9176f5ddf1c61eca53544ba252c64e8a076494" target="_blank" class="hover:underline text-blue-400">C++ Programming Professional Certificate</a></li>
+                            </ul>
+                            <p><strong>LinkedIn Learning Certificates:</strong></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li><a href="https://www.linkedin.com/learning/certificates/be23cdedd4ccdcd727a11f7dbdced175303ebc05120147af5024fc863b7b2f88" target="_blank" class="hover:underline text-blue-400">C++ Essential Training</a></li>
+                                <li><a href="https://www.linkedin.com/learning/certificates/2307be8256ae92001e863829524e07f78f53b52fe9675e2f32e03305b9d03cff" target="_blank" class="hover:underline text-blue-400">C++ Design Patterns: Structural</a></li>
+                                <li><a href="https://www.linkedin.com/learning/certificates/ff4d9ef8de09320cad899cac3ac10f3888e7fd437f846fe1cbf9ebc57aed6b9b" target="_blank" class="hover:underline text-blue-400">C++ Development: Advanced Concepts, Lambda Expressions, and Best Practices</a></li>
+                                <li><a href="https://www.linkedin.com/learning/certificates/870709082ba95806b377933019b480f5209d31f88e6fdb5" target="_blank" class="hover:underline text-blue-400">AI Pair Programming with GitHub Copilot</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="py-8 text-center text-gray-500">
-        <!-- Kloud Pixel Studios Logo -->
-        <img src="images/KPlogo.png" alt="Kloud Pixel Studios Logo" class="mx-auto h-16 mb-2 opacity-50 object-contain">
-        <p class="text-xs">&copy; 2025 | Kloud Pixel Studios | All Rights Reserved.</p>
-    </footer>
+        <!-- Contact Banner Section -->
+        <div id="contact-banner-section" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 rounded-2xl card-glow overflow-hidden">
+                <div class="absolute inset-0 z-0 bg-[url('images/letsbuildyournextproject_banner.avif')] bg-cover bg-center opacity-30"></div>
+                <div class="relative z-10 text-left flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                    <div class="mb-6 sm:mb-0">
+                        <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 text-white">Let's build your<br>next project together</h2>
+                        <p class="max-w-xl text-md sm:text-lg text-gray-300">
+                            Ready to collaborate on innovative games, software, or design projects? Reach out to discuss your ideas, request a portfolio, or explore partnership opportunities. Let’s connect and create something exceptional.
+                        </p>
+                    </div>
+                    <button onclick="showSection('contact-form-section')" class="w-full sm:w-auto mt-4 sm:mt-0 bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full shadow-lg">Get in Touch</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div id="contact-form-section" class="portfolio-page py-16 sm:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 hidden">
+            <div class="bg-gray-900 bg-opacity-50 backdrop-blur-md p-8 sm:p-12 rounded-2xl card-glow">
+                <!-- Contact Header Section -->
+                <div class="mb-8">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Contact</p>
+                    <h2 class="text-4xl font-extrabold mb-4 text-white">Let's build<br>something together</h2>
+                    <p class="text-gray-300 text-sm">Questions or collaboration? Reach out using the form or contact details below for project inquiries, job opportunities, or partnerships.</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Form & Details Container -->
+                    <div class="flex-1 flex flex-col gap-8">
+                        <!-- Form -->
+                        <form id="contact-form" action="mailto:officialkloudpixel@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="first-name" class="text-xs text-gray-400 uppercase tracking-widest">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" placeholder="First Name" class="w-full contact-input mt-1">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="text-xs text-gray-400 uppercase tracking-widest">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" class="w-full contact-input mt-1">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="text-xs text-gray-400 uppercase tracking-widest">Email</label>
+                                <input type="email" id="email" name="email" placeholder="email@website.com" class="w-full contact-input mt-1">
+                            </div>
+                            <div>
+                                <label for="subject" class="text-xs text-gray-400 uppercase tracking-widest">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's the subject of your inquiry?" class="w-full contact-input mt-1">
+                                </div>
+                            <div>
+                                <label for="message" class="text-xs text-gray-400 uppercase tracking-widest">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Type your message." class="w-full contact-input mt-1"></textarea>
+                            </div>
+                            <div class="text-left mt-6">
+                                <button type="submit" class="w-auto bg-pink-500 hover:bg-pink-600 transition-colors duration-300 text-white font-bold py-3 px-8 rounded-full shadow-lg">
+                                    Send message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details and Buttons -->
+                    <div class="flex-1 flex flex-col justify-start">
+                        <div class="space-y-6 mb-8 text-gray-300 text-sm">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-phone-alt text-lg text-blue-400"></i>
+                                <div>
+                                    <p class="font-bold">Phone</p>
+                                    <a href="tel:13146695146" class="hover:text-white transition-colors">1(314)669-5146</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-map-marker-alt text-lg text-blue-400"></i>
+                                <div>
+                                    <p class="font-bold">Location</p>
+                                    <a href="https://www.google.com/maps/place/St.+Louis,+MO+63101" target="_blank" class="hover:text-white transition-colors">St. Louis, MO 63101</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-envelope text-lg text-blue-400"></i>
+                                <div>
+                                    <p class="font-bold">Email</p>
+                                    <a href="mailto:officialkloudpixel@gmail.com" class="hover:text-white transition-colors">officialkloudpixel@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="tel:13146695146" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
+                                Call
+                            </a>
+                            <a href="https://www.google.com/maps/place/St.+Louis,+MO+63101" target="_blank" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
+                                Maps
+                            </a>
+                            <a href="mailto:officialkloudpixel@gmail.com" class="w-full text-center border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">
+                                Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="py-8 text-center text-gray-500">
+            <!-- Kloud Pixel Studios Logo -->
+            <img src="images/KPlogo.png" alt="Kloud Pixel Studios Logo" class="mx-auto h-16 mb-2 opacity-50 object-contain">
+            <p class="text-xs">&copy; 2025 | Kloud Pixel Studios | All Rights Reserved.</p>
+        </footer>
+
+    </main>
 
     <script>
+        // --- Section Management Script ---
+        // This script handles showing and hiding the different sections.
+        // The function is defined in the global scope so it can be called from onclick attributes.
+        const portfolioPages = document.querySelectorAll('.portfolio-page');
+        const defaultSectionId = 'home-section';
+        const kloudPixelBanner = document.getElementById('kloud-pixel-banner');
+
+        function showSection(sectionId) {
+            portfolioPages.forEach(page => {
+                page.classList.add('hidden');
+            });
+
+            // Show the clicked section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Manage the visibility of the expertise section and kloud pixel banner
+            const expertiseSection = document.getElementById('expertise-section');
+            const contactBannerSection = document.getElementById('contact-banner-section');
+
+            if (sectionId === 'home-section') {
+                expertiseSection.classList.remove('hidden');
+                kloudPixelBanner.classList.remove('hidden');
+                contactBannerSection.classList.remove('hidden');
+            } else if (sectionId === 'about-section') {
+                expertiseSection.classList.remove('hidden');
+                kloudPixelBanner.classList.remove('hidden');
+                contactBannerSection.classList.add('hidden');
+            }
+            else {
+                expertiseSection.classList.add('hidden');
+                kloudPixelBanner.classList.add('hidden');
+                contactBannerSection.classList.add('hidden');
+            }
+        }
+        
         document.addEventListener('DOMContentLoaded', () => {
             const contactForm = document.getElementById('contact-form');
             if (contactForm) {
@@ -368,7 +593,10 @@
                 });
             }
 
-            // Card Scroll Animation
+            // Initial state: show the home section and its related content
+            showSection(defaultSectionId);
+
+            // --- Card Scroll Animation Script ---
             const cards = document.querySelectorAll('.card');
             const observerOptions = {
                 root: null,
